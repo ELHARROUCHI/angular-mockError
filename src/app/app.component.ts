@@ -1,3 +1,4 @@
+import { FauxHttpService } from './faux-http.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'hello world'
+  constructor(fauxHttpService: FauxHttpService) {
+    fauxHttpService.fetchFail();
+  }
 }
